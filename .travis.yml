@@ -23,3 +23,9 @@ script:
 after_script:
   - docker images
 
+env:
+  global:
+  - CODECOV_TOKEN=:ca1f1d43-3e25-4160-ad1b-7856a7943dc5
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
