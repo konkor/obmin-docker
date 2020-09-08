@@ -4,10 +4,19 @@
 
 A secure private personal server for your data.
 
-## Using
+## Usage
+_You should use **obmin** id for the git version and **obmin/obmin** for dockerhub versions._
+
+## Building the docker image
+```sh
+docker build -t obmin .
+```
+
+### Running the obmin container
 ```sh
 docker run --rm --volume="$PWD:/srv/obmin" -p 80:8088 -it obmin
 ```
+
 ### Use **-d** option to run a container in background
 
 ```console
@@ -18,9 +27,15 @@ $ docker run -d --rm --volume="$PWD:/srv/obmin" -p 80:8088 -it obmin
 docker run --rm --volume="$PWD:/srv/obmin" -p 80:8088 -it obmin obmin-server --config /etc/obmin.config
 ```
 
-## Building
+## Using Dockerhub images
+### Pulling the obmin container from dockerhub
 ```sh
-docker build -t obmin .
+docker pull obmin/obmin
+```
+
+### Running the dockerhub obmin container
+```sh
+docker run --rm --volume="$PWD:/srv/obmin" -p 80:8088 -it obmin/obmin
 ```
 
 ## Customizing
